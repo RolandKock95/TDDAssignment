@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDAssignment", "TDDAssignment\TDDAssignment.csproj", "{82EAB39B-A9FF-4C2F-A320-7876D7651BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDAssignmentTEST", "TDDAssignmentTEST\TDDAssignmentTEST.csproj", "{3F777BDC-6E09-4227-B65F-AF3F41E6C10F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{82EAB39B-A9FF-4C2F-A320-7876D7651BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82EAB39B-A9FF-4C2F-A320-7876D7651BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82EAB39B-A9FF-4C2F-A320-7876D7651BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F777BDC-6E09-4227-B65F-AF3F41E6C10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F777BDC-6E09-4227-B65F-AF3F41E6C10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F777BDC-6E09-4227-B65F-AF3F41E6C10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F777BDC-6E09-4227-B65F-AF3F41E6C10F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

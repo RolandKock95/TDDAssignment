@@ -2,14 +2,15 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TDDAssignment")]
+[assembly: AssemblyTitle("TDDAssignmentTEST")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TDDAssignment")]
+[assembly: AssemblyProduct("TDDAssignmentTEST")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,10 +20,8 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-[assembly: InternalsVisibleTo("TDDAssignmentTEST")]
-
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("82eab39b-a9ff-4c2f-a320-7876d7651bfe")]
+[assembly: Guid("3f777bdc-6e09-4227-b65f-af3f41e6c10f")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -36,3 +35,7 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+//Custom
+
+

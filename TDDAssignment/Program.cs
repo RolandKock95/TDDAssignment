@@ -10,6 +10,8 @@ namespace TDDAssignment
     {
         static void Main(string[] args)
         {
+            XMLValidator xMLValidator = new XMLValidator();
+     
         }
     }
 }
