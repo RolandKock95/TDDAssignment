@@ -9,15 +9,15 @@ using TDDAssignment;
 namespace TDDAssignmentTEST
 {
     [TestFixture]
-    class XMLTest
-        {
+        class XMLTest
+    {
         XMLValidator xMLValidator = new XMLValidator();
 
         [Test]
         public void TESTCanOpenFileXML()
         {
-            Assert.True(xMLValidator.CanOpenFileXML(@"C:\Users\Roland\source\repos\TDDAssignment\TDDAssignment\xmlforuserstory.xml"));
-            Assert.False(xMLValidator.CanOpenFileXML(@"C:\Users\Roland\source\repos\TDDAssignment\TDDAssignment\xmltest.docx"));
+            Assert.True(xMLValidator.CanOpenFileXML(@"C:\Users\Anders\OneDrive\KEA\Software Developer\1. Semester\Test\06 TDD\TDDAssignment\TDDAssignment\xmlforuserstory.xml"));
+            Assert.False(xMLValidator.CanOpenFileXML(@"C:\Users\Anders\OneDrive\KEA\Software Developer\1. Semester\Test\06 TDD\TDDAssignment\TDDAssignment\xmltest.docx"));
         }
 
         [Test]
@@ -29,7 +29,6 @@ namespace TDDAssignmentTEST
             Assert.True(xMLValidator.CheckWhiteSpace(str1));
             Assert.False(xMLValidator.CheckWhiteSpace(str2));
             Assert.False(xMLValidator.CheckWhiteSpace(str3));
-
         }
 
         [Test]
