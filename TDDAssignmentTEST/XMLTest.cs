@@ -16,8 +16,8 @@ namespace TDDAssignmentTEST
         [Test]
         public void TESTCanOpenFileXML()
         {
-            Assert.True(xMLValidator.CanOpenFileXML(@"C:\Users\Anders\OneDrive\KEA\Software Developer\1. Semester\Test\06 TDD\TDDAssignment\TDDAssignment\xmlforuserstory.xml"));
-            Assert.False(xMLValidator.CanOpenFileXML(@"C:\Users\Anders\OneDrive\KEA\Software Developer\1. Semester\Test\06 TDD\TDDAssignment\TDDAssignment\xmltest.docx"));
+            Assert.True(xMLValidator.CanOpenFileXML(@"C:\Users\Roland\source\repos\TDDAssignment\TDDAssignment\xmlforuserstory.xml").Item1);
+            Assert.False(xMLValidator.CanOpenFileXML(@"C:\Users\Roland\source\repos\TDDAssignment\TDDAssignment\xmltest.docx").Item1);
         }
 
         [Test]
