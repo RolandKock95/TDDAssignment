@@ -11,58 +11,32 @@ namespace TDDAssignment
     class XMLValidator
     {
 
-        public Tuple<bool, StreamReader> CanOpenFileXML(string path)
+        public bool CanOpenFileXML(string path)
         {
             string extension = Path.GetExtension(path);
-            bool didWeMakeIt = false;
-            if (extension == ".xml") didWeMakeIt = true;
-            StreamReader streamReader = null;
+            if (extension != ".xml") return false; ;
 
-            //string text = null;
             try
             {
-                string line;
-                int counter = 0;
-
-                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                StreamWriter output = new StreamWriter(Path.Combine(docPath, "Error_log.txt"));
-
-                StreamReader file = new StreamReader(path, Encoding.UTF8);
-
-                while ((line = file.ReadLine()) != null)
+                using (var streamReader = new StreamReader(path, Encoding.UTF8))
                 {
-                    if (!CheckCharactersBeforeOpenTagsAfterClosingTags(line))
-                        output.WriteLine(counter + ' ' + line);
-                    if (!CheckClosingTags(line))
-                        output.WriteLine(counter + ' ' + line);
-                    if (!CheckIncompleteTag(line))
-                        output.WriteLine(counter + ' ' + line);
-                    if (!CheckWhiteSpace(line))
-                        output.WriteLine(counter + ' ' + line);
-                    if (!TESTWellformness_CheckTagsNameSimilar(line))
-                        output.WriteLine(counter + ' ' + line);
-
-                    counter++;
+                    string text = streamReader.ReadToEnd();
+                    if (text != null) return true;
+                    else return false;
                 }
-                //text = streamReader.ReadToEnd();
-                //didWeMakeIt = true;
-
             }
             catch (FileNotFoundException e2)
             {
                 //should write to log
                 Console.WriteLine(e2.StackTrace);
+                return false;
             }
             catch (IOException e)
             {
                 //should write to log
                 Console.WriteLine(e.StackTrace);
+                return false;
             }
-
-            if (streamReader != null)
-                return new Tuple<bool, StreamReader>(didWeMakeIt, streamReader);
-            else
-                return new Tuple<bool, StreamReader>(didWeMakeIt, null);
         }
 
 

@@ -13,34 +13,48 @@ namespace TDDAssignment
         {
             XMLValidator validator = new XMLValidator();
 
-            //string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //StreamWriter output = new StreamWriter(Path.Combine(docPath, "Error_log.txt"));
+            string path = @"C:\Users\Roland\source\repos\TDDAssignment\TDDAssignment\xmlforuserstory.xml";
 
-            int counter = 0;
-            string line;
+            if (!validator.CanOpenFileXML(path)) Console.WriteLine("Den gik ikke");
+            else
+            {
+                string line;
+                int counter = 0;
 
-            // Read the file and display it line by line.  
-            StreamReader file = validator.CanOpenFileXML(@"C:\Users\Roland\source\repos\TDDAssignment\TDDAssignment\xmlforuserstory.xml").Item2;
-            //while ((line = file.ReadLine()) != null)
-            //{
-            //    if (!validator.CheckCharactersBeforeOpenTagsAfterClosingTags(line))
-            //        output.WriteLine(counter + ' ' + line);
-            //    if (!validator.CheckClosingTags(line))
-            //        output.WriteLine(counter + ' ' + line);
-            //    if (!validator.CheckIncompleteTag(line))
-            //        output.WriteLine(counter + ' ' + line);
-            //    if (!validator.CheckWhiteSpace(line))
-            //        output.WriteLine(counter + ' ' + line);
-            //    if (!validator.TESTWellformness_CheckTagsNameSimilar(line))
-            //        output.WriteLine(counter + ' ' + line);
+                try
+                {
+                    
 
-            //        counter++;
-            //}
+                    string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    StreamWriter output = new StreamWriter(Path.Combine(docPath, "Error_log.txt"));
 
-            //file.Close();
-            System.Console.WriteLine("There were {0} lines.", counter);
-            // Suspend the screen.  
-            System.Console.ReadLine();
+                    using (var file = new StreamReader(path, Encoding.UTF8))
+                    {
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            if (!validator.CheckCharactersBeforeOpenTagsAfterClosingTags(line))
+                                output.WriteLine(counter + ' ' + line);
+                            if (!validator.CheckClosingTags(line))
+                                output.WriteLine(counter + ' ' + line);
+                            if (!validator.CheckIncompleteTag(line))
+                                output.WriteLine(counter + ' ' + line);
+                            if (!validator.CheckWhiteSpace(line))
+                                output.WriteLine(counter + ' ' + line);
+                            if (!validator.TESTWellformness_CheckTagsNameSimilar(line))
+                                output.WriteLine(counter + ' ' + line);
+
+                            counter++;
+                        }
+                    }
+
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
+                Console.WriteLine("Der var {0} linjer", counter);
+            }
+
         }
     }
 }
